@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-slate-900;
+  }
+}
+
+/* globals.css or tailwind.css */
+.hero-gradient-stroke {
+  color: black; /* fallback fill */
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: transparent;
+  background: linear-gradient(90deg,#96501A, #96703c, #96501A, #96501A, #cda265,#cda265, #96501A);
+  background-size: 500% 100%; /* make it wider for smooth rotation */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white;
+  animation: stroke-rotate 5s linear infinite; /* continuous rotation */
+}
+
+@keyframes stroke-rotate {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+
+@layer utilities {
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(20px, -20px) scale(1.1);
+    }
+    50% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% {
+      transform: translate(20px, 20px) scale(1.05);
+    }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+@keyframes fadeUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 0.8s ease-out forwards;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+}
